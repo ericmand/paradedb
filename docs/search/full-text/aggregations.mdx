@@ -17,7 +17,7 @@ title: Aggregations/Facets
 
 ParadeDB provides powerful aggregation capabilities over text search results using Tantivy's aggregation features. With the `aggregate` function, you can compute various statistical metrics and group data into buckets based on search queries. This is especially useful for deriving insights from your data.
 
-You can specify the aggregation operation and the field on which the operation is performed in a JSON format compatible with Elasticsearch.
+You can specify the aggregation operation and the field on which the operation is performed in a JSON format compatible with Elasticsearch. Aggregations are supported on any field that has `fast => true` configured at the index build time.
 
 ### Creating the Test Table and BM25 Index
 
@@ -114,7 +114,7 @@ This naming convention is similar to Elasticsearch's format, where user-defined 
 
 ### Average
 
-An average aggregation calculates the mean of the specified numeric field values across all documents.
+An average aggregation calculates the mean of the specified field values across all documents.
 
 <ParamField body="field">The field name to compute the average on.</ParamField>
 <ParamField body="missing">
@@ -124,7 +124,7 @@ An average aggregation calculates the mean of the specified numeric field values
 
 ### Sum
 
-A sum aggregation computes the total sum of the specified numeric field values across all documents.
+A sum aggregation computes the total sum of the specified field values across all documents.
 
 <ParamField body="field">The field name to compute the sum on.</ParamField>
 <ParamField body="missing">
@@ -134,7 +134,7 @@ A sum aggregation computes the total sum of the specified numeric field values a
 
 ### Count
 
-A count aggregation tallies the number of values for the specified numeric field across all documents.
+A count aggregation tallies the number of values for the specified field across all documents.
 
 <ParamField body="field">The field name to compute the count on.</ParamField>
 <ParamField body="missing">
@@ -144,7 +144,7 @@ A count aggregation tallies the number of values for the specified numeric field
 
 ### Min
 
-A min aggregation finds the smallest value for the specified numeric field across all documents.
+A min aggregation finds the smallest value for the specified field across all documents.
 
 <ParamField body="field">The field name to compute the minimum on.</ParamField>
 <ParamField body="missing">
@@ -154,7 +154,7 @@ A min aggregation finds the smallest value for the specified numeric field acros
 
 ### Max
 
-A max aggregation finds the largest value for the specified numeric field across all documents.
+A max aggregation finds the largest value for the specified field across all documents.
 
 <ParamField body="field">The field name to compute the maximum on.</ParamField>
 <ParamField body="missing">
@@ -164,7 +164,7 @@ A max aggregation finds the largest value for the specified numeric field across
 
 ### Stats
 
-A stats aggregation provides a collection of statistical metrics for the specified numeric field, including count, sum, average, min, and max.
+A stats aggregation provides a collection of statistical metrics for the specified field, including count, sum, average, min, and max.
 
 <ParamField body="field">The field name to compute the stats on.</ParamField>
 <ParamField body="missing">
